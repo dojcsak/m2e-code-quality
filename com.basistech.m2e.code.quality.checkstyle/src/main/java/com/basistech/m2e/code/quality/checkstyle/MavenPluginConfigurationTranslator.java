@@ -111,7 +111,8 @@ public class MavenPluginConfigurationTranslator {
 			return null;
 		}
 
-		String outDir = mavenProject.getBuild().getDirectory();
+//		String outDir = mavenProject.getBuild().getDirectory();
+		File outDir = project.getWorkingLocation(configurator.getId()).toFile();
 		File headerFile =
 		        new File(outDir, "checkstyle-header-" + getExecutionId()
 		                + ".txt");
@@ -132,7 +133,8 @@ public class MavenPluginConfigurationTranslator {
 			return null;
 		}
 
-		String outDir = mavenProject.getBuild().getDirectory();
+//		String outDir = mavenProject.getBuild().getDirectory();
+		File outDir = project.getWorkingLocation(configurator.getId()).toFile();
 		File suppressionsFile =
 		        new File(outDir, "checkstyle-suppressions-" + getExecutionId()
 		                + ".xml");
